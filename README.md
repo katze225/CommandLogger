@@ -12,7 +12,7 @@
 - Paper 1.19.4+
 
 ### Screenshots
-- ![img1](img/img1.jpg)
+- ![img1](img/img1.png)
 
 ### License
 See the [LICENSE](LICENSE.md) file for license rights and limitations.
