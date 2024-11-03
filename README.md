@@ -1,9 +1,8 @@
-## 🛡️ PowerAntiRelog
+## 🛡️ CommandLogger
 ### Features
 
 - Easy to use
 - High performance
-- Best protection
 
 ### Usage
 `Add the .jar file to the plugins folder and start your server.`
