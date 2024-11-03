@@ -9,10 +9,10 @@ import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
 public class CommandListener implements Listener {
 
-    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
+    @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void onCommand(PlayerCommandPreprocessEvent event) {
         Player player = event.getPlayer();
-        String command = event.getMessage().replaceFirst("/", "");
+        String command = event.getMessage().replaceFirst("/", "").replace("cmi", "").replaceFirst("^\\s+", "");
 
         if (!isListCommand(command)) {
             return;
@@ -22,11 +22,14 @@ public class CommandListener implements Listener {
     }
 
     private static boolean isListCommand(String command) {
+        String replacedCommand = command.split(" ")[0];
+
         for (String string : CommandLogger.getInstance().getConfig().getStringList("commands")) {
-            if (string.startsWith(command)) {
+            if (string.equalsIgnoreCase(replacedCommand)) {
                 return true;
             }
         }
         return false;
     }
+
 }

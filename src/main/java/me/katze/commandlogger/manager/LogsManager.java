@@ -29,7 +29,7 @@ public class LogsManager {
     }
 
     public static void addLog(Player player, String message) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM-HH:mm:ss");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM HH:mm:ss");
         String timestamp = dateFormat.format(new Date());
 
         String logKey = player.getName() + "." + timestamp;
