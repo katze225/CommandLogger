@@ -42,4 +42,5 @@ public class LogsManager {
             e.printStackTrace();
         }
     }
+
 }
