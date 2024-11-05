@@ -7,9 +7,11 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
+import java.util.List;
+
 public class CommandListener implements Listener {
 
-    @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
+    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
     public void onCommand(PlayerCommandPreprocessEvent event) {
         Player player = event.getPlayer();
         String command = event.getMessage().replaceFirst("/", "").replace("cmi", "").replaceFirst("^\\s+", "");
@@ -23,8 +25,9 @@ public class CommandListener implements Listener {
 
     private static boolean isListCommand(String command) {
         String replacedCommand = command.split(" ")[0];
+        List<String> commandList = CommandLogger.getInstance().COMMANDS;
 
-        for (String string : CommandLogger.getInstance().getConfig().getStringList("commands")) {
+        for (String string : commandList) {
             if (string.equalsIgnoreCase(replacedCommand)) {
                 return true;
             }

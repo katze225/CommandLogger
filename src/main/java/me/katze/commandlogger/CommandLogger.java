@@ -6,10 +6,13 @@ import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.List;
+
 public final class CommandLogger extends JavaPlugin {
+    public final List<String> COMMANDS = getConfig().getStringList("commands");
+
     private static CommandLogger instance;
     private FileConfiguration config;
-
     public LogsManager logsManager;
 
     @Override
